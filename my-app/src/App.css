@@ -1,38 +1,33 @@
-.App {
-  text-align: center;
+/* Common Class */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Zilla Slab', serif !important;
+}
+.bg{
+  background-color: #f6f6f6;
+}
+.card{
+  background-color: #ffff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 15px 15px 15px 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.title{
+  font-size: 25px;
+  color: black;
+  font-weight: 700;
+  margin-bottom: 23px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-formControl.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+  width: 371px;
+  margin-bottom: 23px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.font-20{
+  font-size: 20px;
 }
