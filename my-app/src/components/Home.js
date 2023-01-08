@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Row, Col, Button, Table, Container } from "react-bootstrap";
 import "./home.scss"
+import { TextField } from "@mui/material";
+import { TextareaAutosize } from "@mui/material";
+import { Modal } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 
 function Home() {
 
@@ -8,6 +12,18 @@ function Home() {
         localStorage.removeItem("signup")
         window.location.reload()
     }
+    const [data, setData] = useState();
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => {
+        setShow(false);
+        setData((prevState) => ({
+            ...prevState,
+            name: "",
+        }));
+    };
+    const handleShow = () => setShow(true);
     return (
         <>
             <div className='homepage bg'>
@@ -28,16 +44,56 @@ function Home() {
                         </div>
                         <Row className='justify-content-center'>
                             <Col md="auto">
-                                <div className='card font-20 padcard'>
-                                    <p className='text-center'>Total Balance</p>
+                                <div className='card font-25 padcard'>
+                                    <p className='text-center fw-700'>Total Balance</p>
                                     <span className='text-center'> &#x20B9;2000</span>
                                 </div>
                             </Col>
+
+
                         </Row>
 
 
                     </Container>
                 </div>
+                <div >
+                    <Container>
+                        <div>
+                            <ul className='btns'>
+                                <li> <Link to="/history"> History</Link></li>
+                                <li onClick={handleShow}>Transactions</li>
+                            </ul>
+                        </div>
+                    </Container>
+                </div>
+
+
+                <Modal show={show} onHide={handleClose} centered>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Add Transaction</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+
+                        <Row className='justify-content-center align-items-center'>
+                            <Col md="auto">
+
+                                <form className='regform' >
+                                   
+                                    <div className="input_space">
+                                        <input placeholder="Acc Number" className='inputbox' autoComplete='false' type='number'  />
+                                    </div>
+                                    <div className="input_space">
+                                        <input placeholder="Amount" className='inputbox' autoComplete='false' type='number'  />
+                                    </div>
+
+                                    <Button className='d-flex m-auto'>Submit</Button>
+
+                                </form>
+                            </Col>
+                        </Row>
+                     
+                    </Modal.Body>
+                </Modal>
             </div>
         </>
     )

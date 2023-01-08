@@ -28,6 +28,19 @@ body{
   width: 371px;
   margin-bottom: 23px;
 }
-.font-20{
-  font-size: 20px;
+.font-25{
+  font-size: 25px;
+}
+.fw-700{
+  font-weight: 700;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.pad-23{
+  padding: 23px 0;
 }

@@ -4,8 +4,46 @@
         padding: 23px 0;
         box-shadow: rgb(96 96 98 / 5%) 0px 2px 5px 0px;
     }
+    .btns{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin: 23px 0 0 0;
+        li{
+            margin-right: 23px;
+            border: 1px solid;
+            padding: 7px 10px;
+            color: white;
+            background-color: #0d6efd;
+            border-radius: 7px;
+            cursor: pointer;
+
+            a{
+                color: white !important;
+                text-decoration: none !important;
+            }
+        }
+    }
+}
+.regform{
+    padding: 43px 0px;
+    .inputbox {
+        border-radius: 5px;
+        width: 250px;
+        padding: 10px;
+        margin-bottom: 23px;
+    }
 }
 
 .padcard{
     padding: 24px 40px;
+}
+
+
+// Historyy
+.history{
+    height: 743;
+    .historytable{
+        padding: 50px 0;
+    }
 }
