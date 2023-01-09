@@ -44,3 +44,17 @@ input::-webkit-inner-spin-button {
 .pad-23{
   padding: 23px 0;
 }
+.backtohome{
+  margin-right: 23px;
+  border: 1px solid;
+  padding: 7px 10px;
+  color: white;
+  background-color: #0d6efd;
+  border-radius: 7px;
+  width: 150px;
+  cursor: pointer;
+}
+.backtohome a{
+  color: white !important;
+  text-decoration: none !important;
+}

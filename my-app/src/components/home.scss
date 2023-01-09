@@ -24,6 +24,22 @@
             }
         }
     }
+
+    .profileimg{
+        position: absolute;
+        .proimg{
+            width: 50px;
+            position: relative;
+            top: -56px;
+            left: 64px;
+            /* border: 1px solid; */
+            box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+            right: 0px;
+            background-color: #ffff;
+            bottom: 0;
+            border-radius: 100%;
+        }
+    }
 }
 .regform{
     padding: 43px 0px;
@@ -44,6 +60,6 @@
 .history{
     height: 743;
     .historytable{
-        padding: 50px 0;
+        padding: 48px 0;
     }
 }

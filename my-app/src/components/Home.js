@@ -5,6 +5,9 @@ import { TextField } from "@mui/material";
 import { TextareaAutosize } from "@mui/material";
 import { Modal } from "react-bootstrap";
 import { Link } from 'react-router-dom';
+import Avatar from "../images/Avatar.png"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+  import { faClockRotateLeft, faCoffee, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
 function Home() {
 
@@ -40,13 +43,19 @@ function Home() {
                 <div className='main'>
                     <Container>
                         <div className='text-center m-4'>
-                            <h3>Welcome!!! Dear {localStorage.getItem("name")}</h3>
+                            <h3>Hello {localStorage.getItem("name")}!</h3>
+                            <span>Welcome Back</span>
                         </div>
                         <Row className='justify-content-center'>
                             <Col md="auto">
-                                <div className='card font-25 padcard'>
-                                    <p className='text-center fw-700'>Total Balance</p>
-                                    <span className='text-center'> &#x20B9;2000</span>
+                                <div className='card font-25 padcard mt-4'>
+
+                                    <div className='profileimg'>
+                                        <img src={Avatar} className="proimg" />
+
+                                    </div>
+                                    <p className='text-center fw-700'>Current Balance</p>
+                                    <span className='text-center'> &#x20B9;20,000</span>
                                 </div>
                             </Col>
 
@@ -60,8 +69,8 @@ function Home() {
                     <Container>
                         <div>
                             <ul className='btns'>
-                                <li> <Link to="/history"> History</Link></li>
-                                <li onClick={handleShow}>Transactions</li>
+                                <li> <Link to="/history"><span className='me-2'><FontAwesomeIcon icon={faClockRotateLeft}/></span>History</Link></li>
+                                <li onClick={handleShow}><span className='me-2'><FontAwesomeIcon icon={faPaperPlane}/></span> Send</li>
                             </ul>
                         </div>
                     </Container>
@@ -70,7 +79,7 @@ function Home() {
 
                 <Modal show={show} onHide={handleClose} centered>
                     <Modal.Header closeButton>
-                        <Modal.Title>Add Transaction</Modal.Title>
+                        <Modal.Title>Add Amount</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
 
@@ -78,20 +87,20 @@ function Home() {
                             <Col md="auto">
 
                                 <form className='regform' >
-                                   
+
                                     <div className="input_space">
-                                        <input placeholder="Acc Number" className='inputbox' autoComplete='false' type='number'  />
+                                        <input placeholder="Acc Number" className='inputbox' autoComplete='false' type='number' />
                                     </div>
                                     <div className="input_space">
-                                        <input placeholder="Amount" className='inputbox' autoComplete='false' type='number'  />
+                                        <input placeholder="Amount" className='inputbox' autoComplete='false' type='number' />
                                     </div>
 
-                                    <Button className='d-flex m-auto'>Submit</Button>
+                                    <Button className='d-flex m-auto'>Send</Button>
 
                                 </form>
                             </Col>
                         </Row>
-                     
+
                     </Modal.Body>
                 </Modal>
             </div>

@@ -1,7 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { Row, Col, Button, Table } from "react-bootstrap";
 import "../components/regform.scss"
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import TextField from '@mui/material/TextField';
 import { Link } from '@mui/material';
 import Home from './Home';
@@ -36,8 +37,9 @@ function Registration() {
             localStorage.setItem("email", email.current.value)
             localStorage.setItem("Password", password.current.value)
             localStorage.setItem("signup", email.current.value)
-            alert("Account created successfully!!")
+            toast("Account created successfully!!")
             window.location.reload()
+         
 
         }
 
@@ -55,6 +57,7 @@ function Registration() {
     }
     return (
         <>
+        <ToastContainer/>
             {showHome ? <Home /> :
                 (show ?
 
